@@ -55,7 +55,7 @@ $(function(){
 
    
         $('.mm_slide').slick({            
-            slidesToShow : 1,// 화면에 보여지는 슬라이드 개수
+            slidesToShow : 1,
             slidesToScroll: 1,
             arrows : false,
             dots: true,
@@ -65,13 +65,6 @@ $(function(){
             appendDots:$('.port04_dots')
         });
        
-
-        /* var myModal = new jBox('Modal', {
-            content: 'This is my jBox'
-          });
-           
-          myModal.open(); */
-          /* 팝업창 */
 
           $('.probtn a').on('click',function(){
             event.preventDefault();
