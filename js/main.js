@@ -75,7 +75,7 @@ $(function(){
             attach: '.btn01',
             width: 400,
             height:170,
-            title: '성격단어1',
+            title: '친절함',
             footer:'X표 혹은 단어를 한 번 더 클릭하시면 창이 닫힙니다.',
             position: {x: 1600, y: 100},
             target: '#detail_about',
@@ -92,8 +92,8 @@ $(function(){
             width: 400,
             height:170,
             footer:'X표 혹은 단어를 한 번 더 클릭하시면 창이 닫힙니다.',
-            position: {x: 1400, y: 300},
-            title: '성격단어2',
+            position: {x: 1400, y: 250},
+            title: '융통성',
             overlay: false,
             content: $('.modal02'),
             draggable: 'title',
@@ -105,17 +105,39 @@ $(function(){
             attach: '.btn03',
             width: 400,
             height:170,
-            footer:'하하',
-            position: {x: 1550, y: 500},
-            title: '성격단어2',
+            footer:'X표 혹은 단어를 한 번 더 클릭하시면 창이 닫힙니다.',
+            position: {x: 1600, y: 400},
+            title: '새로움',
             overlay: false,
-            content:'',
+            content: $('.modal03'),
             draggable: 'title',
             repositionOnOpen: false,
             repositionOnContent: false,
-           
           });
-         
+          new jBox('Modal', {
+            attach: '.btn04',
+            width: 400,
+            height:170,
+            footer:'X표 혹은 단어를 한 번 더 클릭하시면 창이 닫힙니다.',
+            position: {x: 1400, y: 550},
+            title: '새로움',
+            overlay: false,
+            content: $('.modal04'),
+            draggable: 'title',
+            repositionOnOpen: false,
+            repositionOnContent: false,
+          });
+
+          var myModal = new jBox('Modal', {
+            title: '안내사항',
+            content: $('.modalmain'),
+            footer:'빈화면 혹은 X표를 클릭하시면 창이 닫힙니다.',
+            width: 600,
+            overlayclass:$('#over'),
+            height:180,
+          });
+           
+          myModal.open();
 
           $('.pro_main .btn01 a').on('click',function(){
             character01.open();
@@ -157,7 +179,7 @@ $(function(){
                         borderColor:'#004667'
                     });
                     $('#portfolio .bot_logo div').css({
-                        backgroundImage:'url(../img/logo_color.png)'
+                        backgroundImage:'url(../img/logo_color.png)no-repeat center center/100%'
                     });
                 }else if($('.port_slide').slick('slickCurrentSlide')%2 == 1){
                     $('#portfolio .gnb li').css({
@@ -173,7 +195,7 @@ $(function(){
                         borderColor:'#f1f4f6'
                     });
                     $('#portfolio .bot_logo div').css({
-                        backgroundImage:'url(../img/logo_white.png)'
+                        backgroundImage:'url(../img/logo_white.svg)no-repeat center center/100%'
                     });
                 }
             });

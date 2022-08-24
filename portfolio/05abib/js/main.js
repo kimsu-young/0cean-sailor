@@ -1,34 +1,113 @@
 
 $(function(){
-   
-    $('.menubtn').on('click',function(){
-        if($('.menubar').hasClass("open")==true){
-            $('.menubar').stop().animate({
-                left:'-100%'
-            },1000,'easeInOutQuint');
-            $('.menubar').removeClass('open');
-        }else{
-            $('.menubar').stop().animate({
-                left:0
-            },1000,'easeInOutQuint');
-            $('.menubar').addClass('open');
+
+  $('.menubtn').on('click',function(){
+    if($('.menubar').hasClass("open")==true){
+        $('.menubar').stop().animate({
+            left:'-100%'
+        },1000,'easeInOutQuint');
+        $('.menubar').removeClass('open');
+    }else{
+        $('.menubar').stop().animate({
+            left:0
+        },1000,'easeInOutQuint');
+        $('.menubar').addClass('open');
+    }
+   });
+   $(window).resize(function() {
+    $('.inmenu').css({ display:'none'})
+      if ($(window).width()>=1200) { 
+          $(window).on('scroll',function(){
+            if($(window).scrollTop() >=1080){
+              $('.inmenu').slideDown()
+            }else{
+              $('.inmenu').css({
+                display:'none'
+              })
+            }
+          }); 
+          
+          $('.inmenu').on('click',function(){
+            $('.menubar').animate({
+              left:0
+            },1000)
+          });
+          $('.X').on('click',function(){
+            $('.menubar').animate({
+              left:'-100%'
+            },1000)
+          });
         }
-    });
+  }).resize();
+    
+    
+   
+    $('.gnb_tit').click(function(a){
+      a.preventDefault();
+    })
+
+    let gnbHover = gsap.timeline();
+    let gnbHover2 = gsap.timeline();
+    let gnbLength = $('.gnb_sub li').width();
+    $('.sub01').mouseenter(function(){
+      gnbHover.add('g01')
+      gnbHover.add('g02')
+      gnbHover.add('g03')
+      gnbHover.add('g04')
+      .to('.sub01 .gnb01', 1, { x: gnbLength,ease: Power4.easeOut },'g01')
+      .to('.sub01 .gnb01', 1, { opacity:1,ease: Power4.easeOut },'g01')
+      .to('.sub01 .gnb02', 1, { x: gnbLength * 2.2,ease: Power4.easeOut },'g02')
+      .to('.sub01 .gnb02', 1, { opacity:1,ease: Power4.easeOut },'g02')
+      .to('.sub01 .gnb03', 1, { x: gnbLength * 3.2,ease: Power4.easeOut },'g03')
+      .to('.sub01 .gnb03', 1, { opacity:1,ease: Power4.easeOut },'g03')
+      .to('.sub01 .gnb04', 1, { x: gnbLength * 3.8,ease: Power4.easeOut },'g03')
+      .to('.sub01 .gnb04', 1, { opacity:1,ease: Power4.easeOut },'g03')
+    })
+    $('.sub01').mouseleave(function(){
+      gnbHover.add('end')
+      .to('.sub01 .gnb01', 1, { x: 0,ease: Power4.easeOut },'end')
+      .to('.sub01 .gnb02', 1.2, { x: 0 ,ease: Power4.easeOut },'end')
+      .to('.sub01 .gnb03', 1.4, { x: 0 ,ease: Power4.easeOut },'end')
+      .to('.sub01 .gnb04', 1.6, { x: 0 ,ease: Power4.easeOut },'end')
+      .to('.sub01 li', 1.5, { opacity:0,ease: Power4.easeOut },'end')
+    })
+    $('.sub02').mouseenter(function(){
+      gnbHover2.add('g01')
+      gnbHover2.add('g02')
+      gnbHover2.add('g03')
+      .to('.sub02 .gnb01', 1, { x: gnbLength,ease: Power4.easeOut },'g01')
+      .to('.sub02 .gnb01', 1, { opacity:1,ease: Power4.easeOut },'g01')
+      .to('.sub02 .gnb02', 1, { x: gnbLength * 2,ease: Power4.easeOut },'g02')
+      .to('.sub02 .gnb02', 1, { opacity:1,ease: Power4.easeOut },'g02')
+      .to('.sub02 .gnb03', 1, { x: gnbLength * 3,ease: Power4.easeOut },'g03')
+      .to('.sub02 .gnb03', 1, { opacity:1,ease: Power4.easeOut },'g03')
+    })
+    $('.sub02').mouseleave(function(){
+      gnbHover2.add('end')
+      .to('.sub02 .gnb01', 1, { x: 0,ease: Power4.easeOut },'end')
+      .to('.sub02 .gnb02', 1.2, { x: 0 ,ease: Power4.easeOut },'end')
+      .to('.sub02 .gnb03', 1.4, { x: 0 ,ease: Power4.easeOut },'end')
+      .to('.sub02 li', 1.5, { opacity:0,ease: Power4.easeOut },'end')
+    })
+    
+    
+
+
 
     let cont1h =$('.cont1').offset().top;
     function scrollfadeout(){
-      $('.cont1_tit').stop().animate({
+      $('.cont1_tit').animate({
         color:'#fff'
       },1900,'easeInQuart',1000);
-      $('.cont1_bg_white').stop().fadeOut(1900,'easeInQuart',1000);
-      $('.cont1_subtit').stop().animate({
+      $('.cont1_bg_white').fadeOut(1900,'easeInQuart',1000);
+      $('.cont1_subtit').animate({
         color:'#fff',
         textShadow :'text-shadow: 5px 5px 5px ##fff;'
       },1900,'easeInQuart',1000);
-      $('.cont1_subtxt').stop().animate({
+      $('.cont1_subtxt').animate({
         color:'#eee'
       },1900,'easeInQuart',1000);
-      $('.cont1_txt').stop().animate({
+      $('.cont1_txt').animate({
         color:'#ddd'
       },1900,'easeInQuart',1000);
     }

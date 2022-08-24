@@ -910,10 +910,22 @@ border-radius: 50%; background-color: #00334c; margin-right: 10px;}
     transform: translateY(-86.6%);
 }
 /* 포트폴리오2 */
+
 .slide.port03 .slide_in .display_img .img_frame:hover img{
     transform: translateY(-41.7%);
 }/* 포트폴리오3 */
-
+.slide.port05 .slide_in .display_img .img_frame:hover .mobile_img{
+    transform: translateY(-88.5%);
+}
+.slide.port05 .slide_in .display_img .img_frame:hover .pc_img{
+    transform: translateY(-74.5%);
+}
+.slide.port05 .slide_in .slideimg .display_img .img_frame .pc_img{
+    transition: 5.5s all linear;
+}
+.slide.port05 .slide_in .slideimg .display_img .img_frame .mobile_img{
+    transition: 10s all linear;
+}
 
   /* 블루컬러 포트폴리오 css */
   #portfolio .slide.blue{
@@ -955,6 +967,10 @@ border-radius: 50%; background-color: #00334c; margin-right: 10px;}
   .slide.port04 .color01 span{background-color: #6730c4;}
   .slide.port04 .color02 span{background-color: #eee;}
   .slide.port04 .color03 span{background-color: #381278;}
+
+  .slide.port05 .color01 span{background-color: #678e48;}
+  .slide.port05 .color02 span{background-color: #eff4ed;}
+  .slide.port05 .color03 span{background-color: #1e1e1e;}
 
   /* 끝 */
 

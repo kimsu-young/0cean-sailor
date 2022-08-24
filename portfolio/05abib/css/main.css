@@ -590,6 +590,7 @@ a{text-decoration: none;color: inherit;}
     width: 90vw;
     border: 1px solid #222;
     position: absolute;
+    display: flex;
     left: 50%;bottom: -60%;
     transform: translateX(-50%);
 }
@@ -720,9 +721,54 @@ a{text-decoration: none;color: inherit;}
     z-index: 10;
     font-family: 'NanumSquare';
 }
+.inmenu{
+    position: fixed;
+    width: 113px; height: 100vh;
+    background-color: #fff;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    display: none;
+}
+.inmenu h4{
+    font-size: 60px;
+    font-family: 'Mark Pro';
+    font-weight: 900;
+    width:20px;
+    word-wrap: break-word;
+    text-align:center;
+    line-height: 55px;
+    position: absolute;
+    left: 40%;
+    top: 15px;
+    transform: translateX(-50%);
+}
+.inmenu span{
+    display: block;
+    width: 80px; height: 2px;
+    background-color: #666;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+.inmenu .in_icon{
+    
+    position: absolute;
+    left: 50%;
+    bottom: 15px;
+    transform: translate(-50%,-50%);
+}
+.inmenu .in_icon p{
+    margin-top: 10px;
+    cursor: pointer;
+}
 .menubar .mlogo{
     position: absolute;
     top: 20px;left: 20px;
+}
+.menubar .m_icon{
+    display: none;
 }
 .menubar .mlogo img{
     width: 15vmax; height: auto;
@@ -746,6 +792,7 @@ a{text-decoration: none;color: inherit;}
     font-size: 2vmax;
     color: #666;
 }
+.menubar .user_info{display: none;}
 .menubar .mbanner{
     position: absolute;
     left: 50%; bottom: 10%;
@@ -846,20 +893,39 @@ a{text-decoration: none;color: inherit;}
     #header .gnb{
         display: block;position: absolute;
         bottom: 70px;left: 70px;
-        z-index: 100;
+        z-index: 1000;
+        color: white;
     }
     #header .gnb>li{
         display: flex;
     }
     #header .gnb>li ul{
-        display: flex;
+        line-height: 35px;
+    }
+    #header .gnb>li ul li{
+        position: absolute;
+        width: 100px;
+        left: 0;
+        opacity: 0;
+    }
+    #header .gnb>li ul .gnb01{
+        width: 120px;
     }
     #header .gnb>li>a{
         font-size: 30px;
         font-family: 'Arita-dotum-Medium';
+        width: 500px;
+    }
+    #header .gnb_tit{
+        padding-right: 500px;
+    }
+    #header .gnb_tit a{
+        display: block;
+        width: 200px; height: auto;
     }
     #mainvisual {
         width: 100%; height: 1080px;
+        z-index: 100;
     }
     #mainvisual .mainv_video{
         width:100%;; height: 100%;
@@ -1169,5 +1235,73 @@ a{text-decoration: none;color: inherit;}
         bottom: 0;
         right: 100px;
         background: url(../img/logo_white02.png)no-repeat center top / 224px auto;
+    }
+    .menubar{
+        width:430px;
+        height:100vh;
+        z-index:100;
+        position:'fixed';
+    }
+    .menubar .mtop{
+        border-bottom: 2px solid #222;
+        width: 350px;
+        margin-left: 45px;
+        margin-top: 35px;
+        display: flex;
+        align-items:center;
+        justify-content:space-between;
+    }
+    .menubar .mlogo{
+        position: static;
+        margin-bottom: 20px;
+    }
+    .menubar .m_icon{
+        display: flex;
+        order: 4;
+    }
+    .menubar .m_icon img{
+        width: 24px; height: auto;
+    }
+    .menubar .mlogo img{
+        width:130px;
+    }
+    .menubar .mgnb>li{
+        padding-bottom: 0;
+    }
+    .menubar .mgnb>li>a{
+        font-size: 48px;
+        font-weight: 500;
+    }.menubar .mgnb .gnb_sub li{
+        padding: 5px 0;
+        text-indent: 20px;
+    }
+    .menubar .mgnb .gnb_sub li a{
+        font-size: 22px;
+    }
+    .menubar .mgnb{
+        position: relative;
+        left: 45px; top: 0%;
+        transform: translate(0);
+        text-align: left;
+    }
+    .menubar .user_info{
+        display: block;
+        display: flex;
+        justify-content: center;
+        padding: 10px 0;
+    }
+    .menubar .mbanner img{
+        width: 327px; height: 190px;
+        object-fit:cover;
+    }
+    .menubar .copy{
+        width: 80%;
+    }
+    .menubar .user_info .X{
+        position: absolute;
+        top: 25px; right: 35px;
+        font-weight: 900;
+        font-size: 24px;
+        cursor: pointer;
     }
 }
