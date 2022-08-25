@@ -1367,3 +1367,12 @@ background-blend-mode: lighten;}
     width: 50px; height: auto;
     top: 42%;left: 43%;
 }
+.link_btn{
+    position: absolute;
+    bottom: 170px;
+    right: 60px;
+    transition: 1.5s all ease-in-out;
+}
+.link_btn:hover{
+    transform: rotate(360deg);
+}
