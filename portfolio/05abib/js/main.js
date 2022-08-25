@@ -14,31 +14,38 @@ $(function(){
         $('.menubar').addClass('open');
     }
    });
-   $(window).resize(function() {
-    $('.inmenu').css({ display:'none'})
-      if ($(window).width()>=1200) { 
-          $(window).on('scroll',function(){
-            if($(window).scrollTop() >=1080){
-              $('.inmenu').slideDown()
-            }else{
-              $('.inmenu').css({
-                display:'none'
-              })
-            }
-          }); 
-          
-          $('.inmenu').on('click',function(){
-            $('.menubar').animate({
-              left:0
-            },1000)
-          });
-          $('.X').on('click',function(){
-            $('.menubar').animate({
-              left:'-100%'
-            },1000)
-          });
-        }
-  }).resize();
+   if ($(window).width() >= 1200) {
+
+    $(window).on('scroll', function () {
+
+      if ($(window).scrollTop() >= 1080) {
+        $('.inmenu').slideDown()
+      } else {
+        $('.inmenu').css({ display: 'none' })
+      }
+    });
+
+    $('.inmenu').on('click', function () {
+      $('.menubar').animate({
+        left: 0
+      }, 1000)
+    });
+
+    $('.X').on('click', function () {
+      $('.menubar').animate({
+        left: '-100%'
+      }, 1000)
+    });
+
+  } else {
+
+    $('.inmenu').css({ display: 'none' })
+
+  } //if
+
+  $(window).resize(function () {
+    document.location.reload();
+  })
     
     
    
