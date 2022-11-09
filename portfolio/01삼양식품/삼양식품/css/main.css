@@ -560,7 +560,6 @@
     color: white;
 }
 .footerin .fm{
-    float: right;
     padding: 0 46px;
     position: relative;
     top: -2px;
@@ -590,7 +589,6 @@
 .fbox{
     padding:20px 35px;
     float: left;
-    border-right: 2px solid #6a6a6a;
 }
 .fbox .flogo{
     text-align: center;
